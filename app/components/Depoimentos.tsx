@@ -57,7 +57,7 @@ export default function Depoimentos() {
 
               {/* Content */}
               <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </blockquote>
 
               {/* Author */}
