@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## ✅ Landing Page
 
-## Getting Started
+### 🎨 Design e Estrutura
+- Layout moderno e profissional com cores inspiradas em tecnologia (tons de azul, branco e cinza)
+- Design responsivo que funciona perfeitamente em desktop, tablet e mobile
+- Tipografia moderna usando a fonte Inter do Google Fonts
+- Uso inteligente de espaços em branco para melhor legibilidade
+### 📱 Componentes Implementados
+#### 1. Header (Header.tsx)
+- Logo da empresa
+- Navegação responsiva com menu mobile
+- Botão de CTA "Solicitar Orçamento"
 
-First, run the development server:
+#### 2. Hero (Hero.tsx)
+- Título chamativo com gradiente
+- Descrição dos serviços
+- Botões de chamada para ação
+- Estatísticas da empresa
+- Indicador de scroll animado
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### 3. Sobre (Sobre.tsx)
+- Destaque da experiência (10+ anos)
+- Missão e diferenciais da empresa
+- Cards com recursos principais
+- Gráficos de performance
+- Estatísticas detalhadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 4. Serviços (Servicos.tsx + ServiceCard.tsx)
+- Instalação de sistemas de ar-condicionado
+- Manutenção preventiva e corretiva
+- Projetos de refrigeração comercial e industrial
+- Cards interativos com hover effects
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### 5. Depoimentos (Depoimentos.tsx)
+- Depoimentos estáticos de clientes
+- Sistema de avaliação com estrelas
+- Estatísticas de satisfação
+- Seção CTA adicional
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 6. Contato (Contato.tsx)
+- Formulário completo (nome, email, telefone, mensagem)
+- Informações de contato detalhadas
+- Seção de emergência 24/7
+- Validação de formulário
 
-## Learn More
+#### 6. Footer (Footer.tsx)
+- Informações da empresa
+- Links para serviços
+- Redes sociais
+- Dados de contato
+- Links legais
 
-To learn more about Next.js, take a look at the following resources:
+### Tecnologias Utilizadas
+- Next.js 15 com App Router
+- Tailwind CSS 4 para estilização
+- TypeScript para type safety
+- React 19 com hooks modernos
+- Componentes reutilizáveis e modulares
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🎯 Características Especiais
+- Navegação suave entre seções
+- Animações e transições suaves
+- Design system consistente com variáveis CSS customizadas
+- SEO otimizado com metadados apropriados
+- Acessibilidade com labels e estrutura semântica
+- Performance otimizada com lazy loading
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📊 Conteúdo da Empresa
+- Foco em refrigeração comercial e industrial
+- Destaque para 10+ anos de experiência
+- Atendimento técnico especializado
+- Suporte 24/7 para emergências
+- Tecnologia de ponta e equipamentos modernos
