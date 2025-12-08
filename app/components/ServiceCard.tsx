@@ -36,11 +36,11 @@ export default function ServiceCard({ title, description, icon, features }: Serv
       </ul>
 
       {/* Hover effect */}
-      <div className="mt-6 pt-6 border-t border-gray-100">
+      {/* <div className="mt-6 pt-6 border-t border-gray-100">
         <div className="text-primary font-semibold group-hover:translate-x-2 transition-transform duration-300">
           Saiba mais →
         </div>
-      </div>
+      </div> */}
     </div>
   );
 } 

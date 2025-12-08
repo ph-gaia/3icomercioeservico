@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Depoimentos() {
   const testimonials = [
     {
@@ -88,18 +90,18 @@ export default function Depoimentos() {
             <p className="text-primary-100 mb-6">
             Envie seu currículo e faça parte da nossa equipe de especialistas!
             </p>
-            <a
-              href="#contato"
+            <Link
+              href="/vagas"
               className="inline-flex items-center bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               Trabalhe Conosco
               <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

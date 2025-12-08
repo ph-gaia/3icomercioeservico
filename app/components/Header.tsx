@@ -25,9 +25,9 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#inicio" className="text-gray-700 hover:text-primary transition-colors">
+            <Link href="/" className="text-gray-700 hover:text-primary transition-colors">
               Início
-            </a>
+            </Link>
             <a href="#sobre" className="text-gray-700 hover:text-primary transition-colors">
               Sobre
             </a>
@@ -44,12 +44,12 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
-              href="#trabalhe-conosco"
+            <Link
+              href="/vagas"
               className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg font-medium transition-colors"
             >
               Trabalhe Conosco
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -73,9 +73,9 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-              <a href="#inicio" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
+              <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
                 Início
-              </a>
+              </Link>
               <a href="#sobre" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
                 Sobre
               </a>
@@ -88,12 +88,9 @@ export default function Header() {
               <a href="#contato" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
                 Contato
               </a>
-              <a
-                href="#trabalhe-conosco"
-                className="block px-3 py-2 bg-primary text-white rounded-lg font-medium text-center"
-              >
+              <Link href="/vagas" className="block px-3 py-2 bg-primary text-white rounded-lg font-medium text-center">
                 Trabalhe Conosco
-              </a>
+              </Link>
             </div>
           </div>
         )}
