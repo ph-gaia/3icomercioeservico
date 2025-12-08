@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Header() {
@@ -16,9 +17,9 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-primary">
-                3i Comércio e Serviço
-              </h1>
+              <Link href='/'>
+                <img src="/img/logo.png" alt="3i Comércio e Serviço" className="h-16 w-auto" />
+              </Link>
             </div>
           </div>
 
@@ -44,10 +45,10 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
-              href="#contato"
+              href="#trabalhe-conosco"
               className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg font-medium transition-colors"
             >
-              Solicitar Orçamento
+              Trabalhe Conosco
             </a>
           </div>
 
@@ -88,10 +89,10 @@ export default function Header() {
                 Contato
               </a>
               <a
-                href="#contato"
+                href="#trabalhe-conosco"
                 className="block px-3 py-2 bg-primary text-white rounded-lg font-medium text-center"
               >
-                Solicitar Orçamento
+                Trabalhe Conosco
               </a>
             </div>
           </div>

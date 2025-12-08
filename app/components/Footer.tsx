@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
@@ -5,9 +7,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              3i Comércio e Serviço
-            </h3>
+            <Link href='/'>
+              <img src="/img/logo.png" alt="3i Comércio e Serviço" className="h-16 w-auto" />
+            </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Especialistas em refrigeração comercial e industrial com mais de 10 anos de experiência. 
               Oferecemos soluções completas em instalação, manutenção e projetos de refrigeração.

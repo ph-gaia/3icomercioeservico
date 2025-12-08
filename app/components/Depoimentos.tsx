@@ -1,25 +1,25 @@
 export default function Depoimentos() {
   const testimonials = [
     {
-      name: "Carlos Silva",
-      company: "Supermercado Silva",
-      content: "A 3i Comércio e Serviço instalou todo o sistema de refrigeração do nosso supermercado. O trabalho foi impecável e o atendimento técnico é excepcional. Recomendo fortemente!",
-      rating: 5,
-      avatar: "CS"
+      "name": "Gabriel Carneiro",
+      "cargo": "Engenheiro Mecânico",
+      "rating": 5,
+      "avatar": "GC",
+      "content": "Trabalhar na 3i é fazer parte de uma equipe que valoriza a evolução técnica e a segurança em cada projeto. Aqui, temos liberdade para inovar e o suporte necessário para entregar sempre o melhor resultado."
     },
     {
-      name: "Maria Santos",
-      company: "Restaurante Sabor & Arte",
-      content: "Excelente serviço de manutenção preventiva. Eles sempre nos avisam quando é necessário fazer algum ajuste e o equipamento nunca para de funcionar. Profissionais muito competentes.",
-      rating: 5,
-      avatar: "MS"
+      "name": "Daniele Santos",
+      "cargo": "Gerente Geral",
+      "rating": 5,
+      "avatar": "DS",
+      "content": "Na 3i, prezamos pela excelência e pelo desenvolvimento humano. Nosso ambiente é colaborativo, transparente e voltado para o crescimento contínuo, tanto dos processos quanto das pessoas."
     },
     {
-      name: "João Oliveira",
-      company: "Indústria Alimentícia Oliveira",
-      content: "Projetaram e instalaram nosso sistema de câmaras frigoríficas. O projeto foi entregue no prazo, dentro do orçamento e com qualidade superior. Estamos muito satisfeitos.",
-      rating: 5,
-      avatar: "JO"
+      "name": "Jorge Junior",
+      "cargo": "Técnico Hospitalar",
+      "rating": 5,
+      "avatar": "JJ",
+      "content": "A 3i me proporcionou capacitação, reconhecimento e desafios que impulsionam meu crescimento profissional. É gratificante fazer parte de uma empresa que preza pela qualidade e pela responsabilidade em cada atendimento."
     }
   ];
 
@@ -33,12 +33,11 @@ export default function Depoimentos() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            O que nossos clientes dizem
+            O que nossos colaboradores dizem
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A satisfação dos nossos clientes é nossa maior recompensa. 
-            Conheça alguns depoimentos de quem já confiou em nossos serviços.
+            A satisfação dos nossos colaboradores é nossa maior recompensa.
           </p>
         </div>
 
@@ -72,7 +71,7 @@ export default function Depoimentos() {
                     {testimonial.name}
                   </div>
                   <div className="text-sm text-gray-600">
-                    {testimonial.company}
+                    {testimonial.cargo}
                   </div>
                 </div>
               </div>
@@ -80,40 +79,20 @@ export default function Depoimentos() {
           ))}
         </div>
 
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-3xl font-bold text-primary mb-2">98%</div>
-            <div className="text-gray-600">Clientes Satisfeitos</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-primary mb-2">4.9/5</div>
-            <div className="text-gray-600">Avaliação Média</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-primary mb-2">500+</div>
-            <div className="text-gray-600">Projetos Concluídos</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-            <div className="text-gray-600">Suporte Disponível</div>
-          </div>
-        </div>
-
         {/* CTA */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              Junte-se aos nossos clientes satisfeitos
+              Junte-se a nossa equipe
             </h3>
             <p className="text-primary-100 mb-6">
-              Entre em contato conosco e descubra como podemos ajudar seu negócio.
+            Envie seu currículo e faça parte da nossa equipe de especialistas!
             </p>
             <a
               href="#contato"
               className="inline-flex items-center bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
             >
-              Fale Conosco
+              Trabalhe Conosco
               <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
