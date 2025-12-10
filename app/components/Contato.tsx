@@ -47,7 +47,7 @@ export default function Contato() {
           {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Solicite um orçamento
+              Entre em contato conosco
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -157,8 +157,8 @@ export default function Contato() {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-semibold text-gray-900">E-mail</h4>
-                    <p className="text-gray-600">contato@3icomercioeservico.com</p>
-                    <p className="text-gray-600">comercial@3icomercioeservico.com</p>
+                    <p className="text-gray-600">licitacao@3icomercioeservicos.com</p>
+                    <p className="text-gray-600">comercial@3icomercioeservicos.com</p>
                   </div>
                 </div>
 

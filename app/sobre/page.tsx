@@ -30,7 +30,7 @@ export default function SobreDetalhes() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Nossa História
+                Quem Somos
               </h2>
               <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
                 <p>
@@ -44,11 +44,8 @@ export default function SobreDetalhes() {
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl transform rotate-3"></div>
-              <div className="relative bg-gradient-to-br from-primary to-primary-dark rounded-2xl p-12 shadow-2xl">
-                <img src="/img/sede.jpg" alt="Sede" className="w-full h-full object-cover" />
-              </div>
+            <div className="w-full h-full">
+            <img src="/img/sede.png" alt="Sede" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -59,11 +56,8 @@ export default function SobreDetalhes() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Missão, Visão e Valores
+              Nossa Filosofia Empresarial
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Os pilares que guiam nosso trabalho e definem quem somos
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -123,9 +117,6 @@ export default function SobreDetalhes() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Nossos Valores
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nossos Valores definem quem somos e o que buscamos ser em todo tempo.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -211,9 +202,6 @@ export default function SobreDetalhes() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Áreas de Atuação
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Soluções completas para diversas necessidades
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -332,23 +320,17 @@ export default function SobreDetalhes() {
       <section className="py-20 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Pronto para trabalhar conosco?
+            Venha fazer parte da nossa história
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Entre em contato e descubra como podemos ajudar sua empresa a alcançar a excelência em facilities e manutenção.
+            Um time de profissionais comprometidos com a excelência e a qualidade.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/#contato"
-              className="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Solicitar Orçamento
-            </Link>
-            <Link
-              href="/#servicos"
+              href="/vagas"
               className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
             >
-              Ver Nossos Serviços
+              Nossas Vagas
             </Link>
           </div>
         </div>

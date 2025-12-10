@@ -114,10 +114,6 @@ export default function Servicos() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Soluções completas em Engenharia, Manutenção e Facilities
           </h2>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Oferecemos serviços especializados em Engenharia, Manutenção e Facilities para atender todas as suas necessidades.
-          </p>
         </div>
 
         {/* Services Grid */}

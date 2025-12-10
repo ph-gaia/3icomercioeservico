@@ -28,11 +28,14 @@ export default function Header() {
             <Link href="/" className="text-gray-700 hover:text-primary transition-colors">
               Início
             </Link>
-            <a href="#sobre" className="text-gray-700 hover:text-primary transition-colors">
+            <Link href="/sobre" className="text-gray-700 hover:text-primary transition-colors">
               Sobre
-            </a>
+            </Link>
             <a href="#servicos" className="text-gray-700 hover:text-primary transition-colors">
               Serviços
+            </a>
+            <a href="#clientes" className="text-gray-700 hover:text-primary transition-colors">
+              Clientes
             </a>
             <a href="#depoimentos" className="text-gray-700 hover:text-primary transition-colors">
               Depoimentos
@@ -48,7 +51,7 @@ export default function Header() {
               href="/vagas"
               className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg font-medium transition-colors"
             >
-              Trabalhe Conosco
+              Conheça nossas vagas
             </Link>
           </div>
 
@@ -76,11 +79,14 @@ export default function Header() {
               <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
                 Início
               </Link>
-              <a href="#sobre" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
+              <Link href="/sobre" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
                 Sobre
-              </a>
+              </Link>
               <a href="#servicos" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
                 Serviços
+              </a>
+              <a href="#clientes" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
+                Clientes
               </a>
               <a href="#depoimentos" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">
                 Depoimentos
@@ -89,7 +95,7 @@ export default function Header() {
                 Contato
               </a>
               <Link href="/vagas" className="block px-3 py-2 bg-primary text-white rounded-lg font-medium text-center">
-                Trabalhe Conosco
+                Conheça nossas vagas
               </Link>
             </div>
           </div>

@@ -48,10 +48,10 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="#contato"
+              href="#clientes"
               className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              Solicite um Orçamento
+              Nossos clientes
             </a>
             <a
               href="#servicos"
@@ -60,30 +60,7 @@ export default function Hero() {
               Nossos Serviços
             </a>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">300+</div>
-              <div className="text-white/90">Projetos Realizados</div>
-            </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">100+</div>
-              <div className="text-white/90">Licitações Atendidas</div>
-            </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">100+</div>
-              <div className="text-white/90">Clientes Satisfeitos</div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
       </div>
     </section>
   );
