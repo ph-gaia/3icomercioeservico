@@ -9,20 +9,60 @@ export default function Contato() {
     telefone: '',
     mensagem: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Reset status quando o usuário começa a digitar novamente
+    if (submitStatus !== 'idle') {
+      setSubmitStatus('idle');
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar o formulário
-    console.log('Formulário enviado:', formData);
-    alert('Obrigado pelo contato! Entraremos em contato em breve.');
-    setFormData({ nome: '', email: '', telefone: '', mensagem: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // FormSubmit espera os dados em formato FormData
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.nome);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('telefone', formData.telefone);
+      formDataToSend.append('message', formData.mensagem);
+      
+      // Adiciona um assunto personalizado
+      formDataToSend.append('_subject', `Nova mensagem de contato - ${formData.nome}`);
+      
+      // Previne redirecionamento após envio
+      formDataToSend.append('_captcha', 'false');
+      
+      // Envia para o FormSubmit
+      const response = await fetch('https://formsubmit.co/phenriquegaia@gmail.com', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ nome: '', email: '', telefone: '', mensagem: '' });
+      } else {
+        throw new Error('Erro ao enviar formulário');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,7 +102,8 @@ export default function Contato() {
                   value={formData.nome}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Seu nome completo"
                 />
               </div>
@@ -78,7 +119,8 @@ export default function Contato() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="seu@email.com"
                 />
               </div>
@@ -94,7 +136,8 @@ export default function Contato() {
                   value={formData.telefone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="(11) 99999-9999"
                 />
               </div>
@@ -110,16 +153,55 @@ export default function Contato() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Descreva sua necessidade ou projeto..."
                 />
               </div>
 
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex items-center">
+                    <svg className="h-5 w-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-green-800 font-medium">
+                      Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <div className="flex items-center">
+                    <svg className="h-5 w-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-red-800 font-medium">
+                      Erro ao enviar mensagem. Por favor, tente novamente.
+                    </p>
+                  </div>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
-                Enviar Mensagem
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Enviando...
+                  </>
+                ) : (
+                  'Enviar Mensagem'
+                )}
               </button>
             </form>
           </div>

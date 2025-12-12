@@ -1,16 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import VagaCard from '../components/VagaCard';
 import VagaDialog from '../components/VagaDialog';
-import { vagas } from '../data/vagas';
+import { getAllVagas } from '../lib/services/vagasService';
 import { Vaga } from '../types/vaga';
 
 export default function VagasPage() {
+  const [vagas, setVagas] = useState<Vaga[]>([]);
+  const [loading, setLoading] = useState(true);
   const [selectedVaga, setSelectedVaga] = useState<Vaga | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  useEffect(() => {
+    loadVagas();
+  }, []);
+
+  const loadVagas = async () => {
+    try {
+      setLoading(true);
+      const vagasData = await getAllVagas();
+      setVagas(vagasData);
+    } catch (error) {
+      console.error('Erro ao carregar vagas:', error);
+      // Em caso de erro, manter array vazio
+      setVagas([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleVagaClick = (vaga: Vaga) => {
     setSelectedVaga(vaga);
@@ -52,8 +72,16 @@ export default function VagasPage() {
             </div>
           </div>
 
+          {/* Loading */}
+          {loading && (
+            <div className="text-center py-12">
+              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+              <p className="mt-4 text-gray-600">Carregando vagas...</p>
+            </div>
+          )}
+
           {/* Vagas List */}
-          {vagas.length > 0 ? (
+          {!loading && vagas.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {vagas.map((vaga) => (
                 <VagaCard
@@ -63,7 +91,10 @@ export default function VagasPage() {
                 />
               ))}
             </div>
-          ) : (
+          )}
+
+          {/* Empty State */}
+          {!loading && vagas.length === 0 && (
             <div className="text-center py-12">
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

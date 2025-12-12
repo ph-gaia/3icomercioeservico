@@ -17,10 +17,10 @@ export default function Depoimentos() {
       "content": "Na 3i, prezamos pela excelência e pelo desenvolvimento humano. Nosso ambiente é colaborativo, transparente e voltado para o crescimento contínuo, tanto dos processos quanto das pessoas."
     },
     {
-      "name": "Jorge Junior",
+      "name": "Jorge Santos",
       "cargo": "Técnico Hospitalar",
       "rating": 5,
-      "avatar": "JJ",
+      "avatar": "JS",
       "content": "A 3i me proporcionou capacitação, reconhecimento e desafios que impulsionam meu crescimento profissional. É gratificante fazer parte de uma empresa que preza pela qualidade e pela responsabilidade em cada atendimento."
     }
   ];

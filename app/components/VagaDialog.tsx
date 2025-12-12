@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Vaga } from '../types/vaga';
+import { createCandidatura } from '../lib/services/vagasService';
 
 interface VagaDialogProps {
   vaga: Vaga | null;
@@ -41,25 +42,25 @@ export default function VagaDialog({ vaga, isOpen, onClose }: VagaDialogProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!formData.curriculo) {
+      alert('Por favor, anexe seu currículo.');
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // Aqui você pode implementar o envio para a API
-    // Por enquanto, vamos simular o envio
     try {
-      // Simular delay de API
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Aqui você faria a chamada para a API que enviaria o email
-      // Exemplo:
-      // await fetch('/api/candidaturas', {
-      //   method: 'POST',
-      //   body: formData
-      // });
-
-      console.log('Candidatura enviada:', {
-        vaga: vaga.titulo,
-        ...formData
-      });
+      await createCandidatura(
+        {
+          vagaId: vaga.id,
+          vagaTitulo: vaga.titulo,
+          nome: formData.nome,
+          email: formData.email,
+          telefone: formData.telefone
+        },
+        formData.curriculo
+      );
 
       alert('Candidatura enviada com sucesso! Entraremos em contato em breve.');
       
@@ -77,7 +78,7 @@ export default function VagaDialog({ vaga, isOpen, onClose }: VagaDialogProps) {
       onClose();
     } catch (error) {
       console.error('Erro ao enviar candidatura:', error);
-      alert('Erro ao enviar candidatura. Tente novamente.');
+      alert('Erro ao enviar candidatura. Verifique a configuração do Firebase e tente novamente.');
     } finally {
       setIsSubmitting(false);
     }
@@ -200,7 +201,7 @@ export default function VagaDialog({ vaga, isOpen, onClose }: VagaDialogProps) {
                     value={formData.nome}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     placeholder="Seu nome completo"
                   />
                 </div>
@@ -217,7 +218,7 @@ export default function VagaDialog({ vaga, isOpen, onClose }: VagaDialogProps) {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                       placeholder="seu@email.com"
                     />
                   </div>
@@ -233,7 +234,7 @@ export default function VagaDialog({ vaga, isOpen, onClose }: VagaDialogProps) {
                       value={formData.telefone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                       placeholder="(91) 99999-9999"
                     />
                   </div>
