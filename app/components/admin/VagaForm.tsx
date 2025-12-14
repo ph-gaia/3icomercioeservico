@@ -94,7 +94,7 @@ export default function VagaForm({ vaga, onClose, onSave }: VagaFormProps) {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-            placeholder="Ex: Desenvolvedor Full Stack"
+            placeholder="Ex: Técnico em Refrigeração"
           />
         </div>
 
@@ -127,7 +127,7 @@ export default function VagaForm({ vaga, onClose, onSave }: VagaFormProps) {
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-              placeholder="Ex: R$ 5.000 - R$ 8.000"
+              placeholder="Ex: R$ 2.000 - R$ 3.000"
             />
           </div>
         </div>

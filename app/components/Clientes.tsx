@@ -23,8 +23,8 @@ export default function Clientes() {
       logo: '/img/clientes/prefeitura-de-belem.png',
     },
     {
-      name: 'SESMA - Prefeitura de Belém',
-      logo: '/img/clientes/sesma.png',
+      name: 'Secretaria Saúde Pública - Governo do Pará',
+      logo: '/img/clientes/Secretaria Saúde Pública.jpeg',
     },
     {
       name: 'TRT 8ª Região',
