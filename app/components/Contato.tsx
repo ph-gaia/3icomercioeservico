@@ -43,7 +43,7 @@ export default function Contato() {
       formDataToSend.append('_captcha', 'false');
       
       // Envia para o FormSubmit
-      const response = await fetch('https://formsubmit.co/phenriquegaia@gmail.com', {
+      const response = await fetch('https://formsubmit.co/atendimento@3icomercioeservicos.com', {
         method: 'POST',
         body: formDataToSend,
         headers: {
